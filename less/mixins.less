@@ -1,53 +1,52 @@
-// Mixins below variables
+// Mixins in here
 
-.border-radius (@radius: 5px) {
-	-webkit-border-radius: @radius;
-	-moz-border-radius:    @radius;
-	border-radius:         @radius;
-
-	-moz-background-clip:    padding;
-	-webkit-background-clip: padding-box;
-	background-clip:         padding-box;
+.flex
+    (@display: flex,
+     @flex-flow: row wrap,
+     @justify-content: space-between,
+     @align-items: center
+) {
+    display: @display;
+    flex-flow: @flex-flow;
+    justify-content: @justify-content;
+    align-items: @align-items;
 }
 
-.opacity (@opacity: 0.5) {
-	-webkit-opacity: 	@opacity;
-	-moz-opacity: 		@opacity;
-	opacity: 		@opacity;
+.border-bottom(@color: red) {
+    border-bottom: 1px solid @color;
 }
 
-.box-shadow (@string) {
-	-webkit-box-shadow: @string;
-	-moz-box-shadow:    @string;
-	box-shadow:         @string;
+.button (@color: white,
+         @border-radius: 10px,
+         @background-color: @button-bg,
+         @width: 80%,
+         @height: 40px,
+         @font-size: 2rem) {
+    color: @color;
+    border-radius: @border-radius;
+    background-color: @background-color;
+    width: @width;
+    height: @height;
+    font-size: @font-size;
+    text-align: center;
+    line-height: 40px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.rotate (@deg) {
-	-webkit-transform: rotate(@deg);
-	-moz-transform: 	 rotate(@deg);
-	-ms-transform: 		 rotate(@deg);
-	-o-transform: 		 rotate(@deg);
+.button-fixed () {
+    background: blue;
+    width: 100px;
 }
 
-.skew (@deg, @deg2) {
-	-webkit-transform:       skew(@deg, @deg2);
-	-moz-transform: 	 skew(@deg, @deg2);
-	-ms-transform: 		 skew(@deg, @deg2);
-	-o-transform: 		 skew(@deg, @deg2);
+.button-parametric(@background, @width) {
+    background: @background;
+    width: @width;
 }
 
-#bundle() {
-    .button-maker {
-        padding: 5px;
-        width: 150px;
-        border: 1px solid black;
-		background-color: teal;
-		margin-top: 10px;
-	}
-	
-	.text-changer {
-		color: purple;
-		background: orange;
-	}
-
+.button-parametric-with-default (@background: green, @width: 100px) {
+    background: @background;
+    width: @width;
 }

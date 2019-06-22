@@ -1,0 +1,32 @@
+// Navigation Styles here
+
+header {
+    border-bottom: 2px dashed @navigation-border;
+
+    div {
+        .flex(@align-items: baseline);
+        width: 80%;
+        margin: 20px auto;
+        max-width: 800px;
+        // .border-bottom(purple);
+
+        @media @mobile {
+            .flex(@flex-flow: column nowrap);
+        }
+
+        nav {
+            width: 40%;
+            .flex();
+
+            @media @mobile {
+                width: 90%;
+            }
+
+            a {
+                font-size: 1.6rem;
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
